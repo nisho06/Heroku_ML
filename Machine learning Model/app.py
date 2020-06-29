@@ -19,7 +19,7 @@ def webhook():
         res = json.dumps(req['queryResult']['parameters'], indent=4)
         int_features=json.loads(res)
         print(int_features)
-        final_features=pd.DataFrame({'age':[int(int_features['age']['amount'])],'num_preg':[int(int_features['num_preg'])],'glucose_conc':[int(int_features['glucose_conc'])],'diastolic_bp':[int(int_features['diastolic_bp'])],'insulin':[int(int_features['insulin'])],'bmi':[float(int_features['bmi'])],'diab_pred':[float(int_features['diab_pred'])],'skin':[float(int_features['skin'])]})
+        final_features=pd.DataFrame({'age':[int(int_features['age']['amount'])],'num_preg':[int(int_features['num_preg'])],'glucose_conc':[float(int_features['glucose_conc'])],'diastolic_bp':[float(int_features['diastolic_bp'])],'insulin':[float(int_features['insulin'])],'bmi':[float(int_features['bmi'])],'diab_pred':[float(int_features['diab_pred'])],'skin':[float(int_features['skin'])]})
         r=get_data(final_features)
         print(r)
         r=json.dumps(r)
